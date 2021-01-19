@@ -1,12 +1,15 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Airline {
 
 	String ID;
 	String AirlineCode;
 	String name;
 	String History;
-	
+	List<Flight> flights;
 	
 	
 	public Airline(String iD, String airlineCode, String name, String history) {
@@ -15,6 +18,7 @@ public class Airline {
 		AirlineCode = airlineCode;
 		this.name = name;
 		History = history;
+		this.flights = new ArrayList<Flight>();
 	}
 	
 	
@@ -50,5 +54,8 @@ public class Airline {
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
 	}
 	
+	public void addFlight(Flight flight) {
+		this.flights.add(flight);
+	}
 	
 }
